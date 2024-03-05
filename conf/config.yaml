@@ -1,0 +1,8 @@
+# config.yaml
+threshold:
+  default: 0.80
+  help: "Confidence threshold for classification"
+  type: float
+model:
+  path: "model.bin"
+  help: "Fasttext model for text classificaiton"

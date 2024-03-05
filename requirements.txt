@@ -1,0 +1,4 @@
+fastapi
+uvicorn
+fasttext
+hydra-core
