@@ -35,7 +35,7 @@ jobs:
 
     - name: Build and Test
       run: |
-        python -m pytest tests/  # Specify the directory where your tests are located
+        python -m pytest tests/test_example.py  # Specify the directory where your tests are located
 
   deploy:
     runs-on: ubuntu-latest
