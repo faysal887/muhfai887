@@ -57,7 +57,7 @@ jobs:
 
     - name: Push Docker Image
       run: |
-        docker tag fastapi_endpoint:latest faisalibm/visable_task/fastapi_endpoint:latest
+        docker tag fastapi_endpoint:latest faisalibm/visable_task:fastapi_endpoint
         docker push faisalibm/visable_task:fastapi_endpoint
 
     - name: Deploy to Server (Replace with your deployment script)
