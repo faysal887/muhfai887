@@ -48,11 +48,17 @@ jobs:
     - name: Build Docker Image
       run: docker build -t fastapi_endpoint .
 
+    # - name: Push Docker Image
+    #   run: |
+    #     echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+    #     docker tag fastapi_endpoint:latest fastapi_endpoint:latest
+    #     docker push fastapi_endpoint:latest
     - name: Push Docker Image
       run: |
-        echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-        docker tag fastapi_endpoint:latest fastapi_endpoint:latest
-        docker push fastapi_endpoint:latest
+        echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin <registry-url>
+        docker tag fastapi_endpoint:latest <registry-url>/fastapi_endpoint:latest
+        docker push faisalibm/visable_task/fastapi_endpoint:latest
+
     - name: Deploy to Server (Replace with your deployment script)
       run: |
         ssh user@your-server "docker pull fastapi_endpoint:latest && docker-compose up -d"
