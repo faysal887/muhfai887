@@ -19,11 +19,11 @@ class TEXT(BaseModel):
     text: str = Field(..., min_length=1, max_length=1024)
 
 
-@app.on_event("startup")
-def load_model():
-    global model
-    path=get_config()['model']['path']
-    model = fasttext.load_model(path)
+# @app.on_event("startup")
+# def load_model():
+#     global model
+#     path=get_config()['model']['path']
+#     model = fasttext.load_model(path)
 
 
 def get_config():
@@ -33,10 +33,11 @@ def get_config():
     
 
 def predict_fasttext(text):
-    pred = model.predict(text.text, k=1)
-    conf = round(pred[1][0],2)
-    label = pred[0][0].replace('__label__', '')
+    # pred = model.predict(text.text, k=1)
+    # conf = round(pred[1][0],2)
+    # label = pred[0][0].replace('__label__', '')
 
+    label, conf='hello', 1
     return label, conf
 
 
