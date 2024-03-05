@@ -130,7 +130,3 @@ jobs:
       run: |
         docker tag fastapi_endpoint:latest faisalibm/visable_task:fastapi_endpoint
         docker push faisalibm/visable_task:fastapi_endpoint
-
-
-
-
