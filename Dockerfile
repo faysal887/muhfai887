@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9-slim
+FROM python:3.9-slim-buster
 
 # Set the working directory to /app
 WORKDIR /app
@@ -19,9 +19,6 @@ COPY . .
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
-
-# Define environment variable (if needed)
-# ENV NAME World
 
 # Run app.py when the container launches
 CMD ["uvicorn", "endpoint:app", "--host", "0.0.0.0", "--port", "80"]
