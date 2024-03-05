@@ -27,11 +27,7 @@ jobs:
       run: |
         pip install pytest
 
-    - name: Debug Test Discovery
-      run: |
-        ls -R tests/
-        cat tests/test1.py
-        python -m pytest tests/
+
 
     - name: Build and Test
       run: |
