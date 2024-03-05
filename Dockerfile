@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.8
+FROM python:3.9-slim-buster
 
 # Set the working directory to /app
 WORKDIR /app
@@ -7,13 +7,13 @@ WORKDIR /app
 # Update and upgrade packages
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y build-essential libssl-dev libffi-dev python3-dev cmake
+    apt-get install -y build-essential libssl-dev libffi-dev python3-dev
 
 # Install pip
 RUN python -m ensurepip --default-pip
 
-# Install pybind11 with system package manager
-RUN apt-get install -y libpybind11-dev
+# Install pybind11 from wheels
+RUN python -m pip install pybind11
 
 # Install any needed packages specified in requirements.txt
 COPY requirements.txt .
