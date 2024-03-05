@@ -1,7 +1,7 @@
 import uvicorn
 import logging
 from fastapi import FastAPI, HTTPException
-import fasttext
+# import fasttext
 from pydantic import BaseModel
 from datetime import datetime
 from hydra import initialize, compose
