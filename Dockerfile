@@ -13,7 +13,8 @@ RUN apt-get update && \
 RUN python -m ensurepip --default-pip
 
 # Install pybind11 from wheels
-RUN python -m pip install pybind11
+# RUN python -m pip install pybind11
+RUN pip install wheel setuptools pip --upgrade
 
 # Install any needed packages specified in requirements.txt
 COPY requirements.txt .
