@@ -58,8 +58,8 @@ jobs:
     - name: Push Docker Image
       run: |
         docker tag fastapi_endpoint:latest faisalibm/visable_task/fastapi_endpoint:latest
-        docker push faisalibm/visable_task/fastapi_endpoint:latest
+        docker push faisalibm/visable_task:fastapi_endpoint
 
     - name: Deploy to Server (Replace with your deployment script)
       run: |
-        ssh user@your-server "docker pull faisalibm/visable_task/fastapi_endpoint:latest && docker-compose up -d"
+        ssh user@your-server "docker pull faisalibm/visable_task:fastapi_endpoint && docker-compose up -d"
