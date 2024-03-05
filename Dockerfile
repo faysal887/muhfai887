@@ -12,6 +12,8 @@ RUN apt-get update && \
 # Install pip
 RUN python -m ensurepip --default-pip
 
+RUN pip install wheel 
+
 # Install pybind11 from wheels
 # RUN python -m pip install pybind11
 RUN pip install wheel setuptools pip --upgrade
