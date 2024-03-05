@@ -1,6 +1,6 @@
 # config.yaml
 threshold:
-  default: 0.80
+  default: 0.85
   help: "Confidence threshold for classification"
   type: float
 model:
