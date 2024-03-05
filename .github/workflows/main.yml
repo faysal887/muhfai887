@@ -62,7 +62,3 @@ jobs:
     - name: Deploy to Server (Replace with your deployment script)
       run: |
         ssh user@your-server "docker pull fastapi_endpoint:latest && docker-compose up -d"
-
-
-
-
