@@ -51,7 +51,6 @@ async def classify(text: TEXT):
             return {'label': 'undefined', 'conf': conf}
         else:
             return {'label': label, 'conf': conf}
-
     except Exception as e:
         error_msg = f"Error: {str(e)}"
         logging.error(error_msg)
