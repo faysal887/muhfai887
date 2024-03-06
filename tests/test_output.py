@@ -1,14 +1,15 @@
 import sys, os, json
 
-# Get the absolute path to the 'visable' directory
-visable_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Get two levels up
-sys.path.append(visable_dir)  # Add 'visable' to the path
+visable_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(visable_dir)
 
 # Now you can import 'solution' modules
 from endpoint import app, load_model, predict_fasttext, classify
 from fastapi.testclient import TestClient
 
+
 client = TestClient(app)
+
 
 def test_load_model():
     load_model() 
@@ -53,6 +54,4 @@ def test_short_input():
     assert response.status_code == 422
     assert result['detail'][0]['type']=='string_too_short'
     assert result['detail'][0]['msg']=='String should have at least 2 characters'
-
-
 

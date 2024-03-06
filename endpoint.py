@@ -1,14 +1,14 @@
 import uvicorn
 import logging
-from fastapi import FastAPI, HTTPException
 import fasttext
-from pydantic import BaseModel
 from datetime import datetime
 from hydra import initialize, compose
 from pydantic import BaseModel, Field
+from fastapi import FastAPI, HTTPException
 
 
 app = FastAPI()
+
 
 log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s \n'
 logging.basicConfig(filename='app.log', filemode='w', format=log_format)
